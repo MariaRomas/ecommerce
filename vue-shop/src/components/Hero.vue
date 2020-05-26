@@ -12,7 +12,7 @@
                 </p>
                 <div class="hero-btn mt-5">
                     <button class="btn custom-btn btn-outline-secondary mr-4">Explore</button>
-                    <button class="btn custom-btn btn-success ">Products</button>
+                    <button class="btn custom-btn btn-success ">Ассортимент</button>
                 </div>
               </div>
             </div>

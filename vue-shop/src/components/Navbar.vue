@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Хвойник-shop</a>
+  <a class="navbar-brand" href="#">Хвойник</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,7 +12,16 @@
         <router-link to="/" class="nav-link">Главная</router-link>
       </li>
       <li class="nav-item">
-        <router-link to="/about" class="nav-link" href="#">О нас</router-link>
+        <router-link to="/about" class="nav-link" >О нас</router-link>
+      </li>
+       <li class="nav-item">
+        <router-link to="/products" class="nav-link">Ассортимент</router-link>
+      </li>
+       <li class="nav-item">
+        <router-link to="/delivery" class="nav-link">Оплата и доставка</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/contacts" class="nav-link">Контакты</router-link>
       </li>
      
     </ul>
