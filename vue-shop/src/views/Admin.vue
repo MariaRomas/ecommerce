@@ -17,11 +17,11 @@
                 <!-- sidebar-header  -->
                 <div class="sidebar-item sidebar-header">
                     <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="/img/user.png" alt="User picture">
+                        <img class="img-responsive img-rounded" src="/img/user.png" style="border-radius:50px" alt="User picture">
                     </div>
                     <div class="user-info">
-                        <span class="user-name">Jhon
-                            <strong>Smith</strong>
+                        <span class="user-name">Mary
+                            <strong>Jane</strong>
                         </span>
                         <span class="user-role"> {{email}} </span>
                         <span class="user-status">
@@ -92,19 +92,8 @@
             <router-view/>
         </main>
         <!-- page-content" -->
-      
-            <div id="overlay" class="overlay"></div>
-            <div class="container-fluid p-5">
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <h2>Pro Sidebar</h2>
-                        <p>This is a responsive sidebar template with dropdown menu based on bootstrap framework.</p>
-
-                    </div>
-                </div>
-            </div>
-            </div>
-      
+     
+</div>
  
     <!-- page-wrapper -->
     </div>
