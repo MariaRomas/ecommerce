@@ -88,8 +88,8 @@ export default {
 methods:{
     register(){
         fb.auth().createUserWithEmailAndPassword(this.email, this.password)
-        .then((user)=>{
-            $('#login').modal('hide');
+        .then(()=>{
+            $('#login').modal('hide')
 this.$router.replace('admin');
         })
     .catch(function(error) {
