@@ -10,7 +10,13 @@ import './assets/app.scss';
 Vue.component('Navbar', require('./components/Navbar.vue').default);
 Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount("#app");
+
+let app = '';
+
+if(!app){
+  new Vue({
+    router,
+    render: h => h(App)
+  }).$mount("#app");
+  
+}
