@@ -102,7 +102,7 @@
 
 <script>
 // @ is an alias to /src
-import {fb} from '../firebase';
+import {fb, db} from '../firebase';
  import $ from 'jquery';
 export default {
   name: "Admin",
