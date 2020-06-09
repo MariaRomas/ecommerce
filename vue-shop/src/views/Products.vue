@@ -200,7 +200,25 @@ db.collection("products").doc("doc").delete().then(function() {
    }else{
 
    }
-  */  },
+  */
+   Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          this.$firestore.products.doc(doc['.key']).delete()
+          Toast.fire({
+            type: 'success',
+            title: 'Deleted  successfully'
+          })
+        
+        }
+      })  },
     readData(){
       /* db.collection("products").get().then((querySnapshot)=> {
    // this.products = querySnapshot;
