@@ -75,7 +75,7 @@
                     </div>
 
                     <div class="form-group">
-                   <textarea name="description" class="form-control" v-model="product.description"  placeholder="product_description"/>
+                         <vue-editor v-model="product.description"></vue-editor>
                     </div>
                   </div>
                   <!-- product sidebar -->
@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="form-group">
-                      <input type="text" @keyup.188="addTag" placeholder="Product tags" v-model="product.tag" class="form-control">
+                      <input type="text"  placeholder="Product tags" v-model="product.tag" class="form-control">
                       
                       <div  class="d-flex">
                         <p v-for="tag in product.tags">
@@ -101,14 +101,14 @@
 
                     <div class="form-group">
                       <label for="product_image">Product Images</label>
-                      <input type="file" @change="uploadImage" class="form-control">
+                      <input type="file"  class="form-control">
                     </div>
 
                     <div class="form-group d-flex">
-                      <div class="p-1" v-for="(image, index) in product.images">
+                      <div class="p-1" >
                           <div class="img-wrapp">
                               <img :src="image" alt="" width="80px">
-                              <span class="delete-img" @click="deleteImage(image,index)">X</span>
+                              <span class="delete-img" >X</span>
                           </div>
                       </div>
                     </div>
@@ -122,8 +122,8 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button @click="addProduct()" type="button" class="btn btn-primary" >Save changes</button>
-              <button @click="updateProduct()" type="button" class="btn btn-primary">Apply changes</button>
+              <button @click="addProduct()" type="button" v-if="modal == 'new'" class="btn btn-primary" >Save changes</button>
+              <button @click="updateProduct()" type="button"  v-if="modal == 'edit'" class="btn btn-primary">Apply changes</button>
             </div>
           </div>
         </div>
@@ -135,8 +135,12 @@
 <script>
 
 import {fb, db} from '../firebase';
+import { VueEditor } from "vue2-editor";
 export default {
   name: "Products",
+  components:{
+    VueEditor
+  },
   props: {
     msg: String
   },
@@ -150,7 +154,8 @@ export default {
           tags:null,
           images:null
       },
-      activeItem:null
+      activeItem:null,
+      modal:null
     }
   },
   firestore(){
@@ -160,6 +165,7 @@ return {
   },
   methods:{
     addNew(){
+      this.modal='new';
 $('#product').modal('show');
     },
     watcher(){/*
@@ -184,12 +190,24 @@ db.collection("products").doc(this.activeItem).update(this.product)
     console.error("Error updating document: ", error);
 });
 */
+ this.$firestore.products.doc(this.product.id).update(this.product);
+          Toast.fire({
+            type: 'success',
+            title: 'Updated  successfully'
+          })
+           $('#product').modal('hide');
     },
     editProduct(product){
 /*$('#edit').modal('show');
 this.product=product.data();
 this.activeItem = product.id;
-   */ },
+   */ 
+  this.modal='edit';
+   this.product = product;
+   $('#product').modal('show');
+  
+   
+   },
     deleteProduct(doc){
 /*   if(confirm('Are you sure?')){
 db.collection("products").doc("doc").delete().then(function() {

@@ -4,6 +4,13 @@ import router from "./router";
 import jQuery from 'jquery';
 import fb from './firebase';
 import VueFirestore from 'vue-firestore';
+require('firebase/firestore')
+
+
+Vue.use(VueFirestore, {
+  key: 'id',         // the name of the property. Default is '.key'.
+  enumerable: true  //  whether it is enumerable or not. Default is true.
+})
 window.$ = window.jQuery = jQuery;
 import 'popper.js';
 import 'bootstrap';
