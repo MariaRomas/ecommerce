@@ -106,6 +106,12 @@ import {fb, db} from '../firebase';
  import $ from 'jquery';
 export default {
   name: "Admin",
+  data(){
+      return {
+          name:null,
+          email:null
+      }
+  },
   components: {
     
   },
@@ -122,6 +128,13 @@ export default {
             console.log(err);  
           })
       }
-  }
+      
+  },
+  created(){
+
+          let user = fb.auth().currentUser;
+          this.email = user.email;
+          
+      }
 };
 </script>
