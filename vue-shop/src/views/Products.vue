@@ -84,11 +84,11 @@
                     <hr>
 
                     <div class="form-group">
-                      <input type="text" placeholder="Product price" v-model="product.price" class="form-control">
+                      <input type="text" placeholder="Product price" v-model="tag" class="form-control">
                     </div>
 
                     <div class="form-group">
-                      <input type="text"  placeholder="Product tags" v-model="product.tag" class="form-control">
+                      <input type="text"  @keyup.188="addTag" placeholder="Product tags" v-model="product.tag" class="form-control">
                       
                       <div  class="d-flex">
                         <p v-for="tag in product.tags">
@@ -101,15 +101,15 @@
 
                     <div class="form-group">
                       <label for="product_image">Product Images</label>
-                      <input type="file"  class="form-control">
+                      <input type="file" @change="uploadImage" class="form-control">
                     </div>
 
                     <div class="form-group d-flex">
-                      <div class="p-1" >
-                          <div class="img-wrapp">
+                      <div class="p-1" v-for="(image, index) in product.images" >
+                          
                               <img :src="image" alt="" width="80px">
-                              <span class="delete-img" >X</span>
-                          </div>
+                            
+                          
                       </div>
                     </div>
 
@@ -151,11 +151,12 @@ export default {
        name:null,
           description:null,
           price:null,
-          tags:null,
-          images:null
+          tags:[],
+          images:[]
       },
       activeItem:null,
-      modal:null
+      modal:null,
+      tag: null
     }
   },
   firestore(){
@@ -164,6 +165,35 @@ return {
 }
   },
   methods:{
+    addTag(){
+      this.product.tags.push(this.tag);
+      this.tag="";
+
+    },
+    uploadImage(e){
+       if(e.target.files[0]){
+        
+          let file = e.target.files[0];
+    
+          var storageRef = fb.storage().ref('products/'+ Math.random() + '_'  + file.name);
+    
+          let uploadTask  = storageRef.put(file);
+    
+          uploadTask.on('state_changed', (snapshot) => {
+            
+          }, (error) => {
+            // Handle unsuccessful uploads
+          }, () => {
+            // Handle successful uploads on complete
+            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+            
+            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+              this.product.images.push(downloadURL);
+            });
+          });
+      }
+
+    },
     addNew(){
       this.modal='new';
 $('#product').modal('show');
