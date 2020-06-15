@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-    <Products/>
+    <products-list></products-list>
     <Login></Login>
      </div>
  

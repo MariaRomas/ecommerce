@@ -20,9 +20,7 @@
                         <img class="img-responsive img-rounded" src="/img/user.png" style="border-radius:50px" alt="User picture">
                     </div>
                     <div class="user-info">
-                        <span class="user-name">Mary
-                            <strong>Jane</strong>
-                        </span>
+                        
                         <span class="user-role"> {{email}} </span>
                         <span class="user-status">
                             <i class="fa fa-circle"></i>

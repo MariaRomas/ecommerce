@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="form-group">
-                      <input type="text" @keyup.188="addTag" placeholder="Product tags" v-model="tag" class="form-control">
+                      <input type="text" @keyup.32="addTag" placeholder="Product tags" v-model="tag" class="form-control">
                       
                       <div  class="d-flex">
                         <p v-for="tag in product.tags">

@@ -70,4 +70,5 @@ export default {
         height:230px
     }
     .card-text{height:10%}
+    .product-item {height:370px}
 </style>
