@@ -28,7 +28,14 @@ const Toast = Swal.mixin({
 import VueCarousel from 'vue-carousel';
 Vue.use(VueCarousel);
 window.Toast = Toast;
+
+
+
+import store from './store.js';
+
 Vue.component('Navbar', require('./components/Navbar.vue').default);
+Vue.component('add-to-cart', require('./components/AddToCart.vue').default);
+Vue.component('mini-cart', require('./components/MiniCart.vue').default);
 Vue.component('products-list', require('./sections/ProductList.vue').default);
 Vue.config.productionTip = false;
 Vue.use(VueFirestore);
@@ -39,6 +46,7 @@ let app = '';
 if(!app){
   new Vue({
     router,
+    store,
     render: h => h(App)
   }).$mount("#app");
   

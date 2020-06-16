@@ -19,6 +19,7 @@
       </div>
     <products-list></products-list>
     <Login></Login>
+   <mini-cart></mini-cart>
      </div>
  
 </template>
