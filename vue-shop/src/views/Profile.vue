@@ -5,11 +5,9 @@
         <div class="intro h-100">
             <div class="row h-100 align-items-center">
               <div class="col-md-6 ml-3">
-                    <h3>Profile settings</h3>
+                    <h3>Настройки пользователя</h3>
                     
-                 <p>
-                   Change your profile settings here
-                 </p>
+                
               </div>
               <div class="col-md-5">
                   <img src="/img/svg/profile.svg" width="300" alt="" class="img-fluid">
@@ -23,11 +21,11 @@
           <ul class="nav nav-pills ml-3" id="myTab" role="tablist">
 
             <li class="nav-item">
-              <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profile</a>
+              <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Пользователь</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link"  id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">Account settings</a>
+              <a class="nav-link"  id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">Настройки аккаунта</a>
             </li>
            
           </ul>
@@ -40,31 +38,31 @@
                         
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text" name="" v-model="profile.name" placeholder="Full name" class="form-control">
+                            <input type="text" name="" v-model="profile.name" placeholder="Имя" class="form-control">
                           </div>
                         </div>
 
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text"  v-model="profile.phone" placeholder="Phone" class="form-control">
+                            <input type="text"  v-model="profile.phone" placeholder="Телефон" class="form-control">
                           </div>
                         </div>
 
                         <div class="col-md-12">
                           <div class="form-group">
-                            <input type="text"  v-model="profile.address" placeholder="Address" class="form-control">
+                            <input type="text"  v-model="profile.address" placeholder="Адрес" class="form-control">
                           </div>
                         </div>
 
                         <div class="col-md-8">
                           <div class="form-group">
-                            <input type="text"  v-model="profile.postCode" placeholder="Postcode" class="form-control">
+                            <input type="text"  v-model="profile.postCode" placeholder="Индекс" class="form-control">
                           </div>
                         </div>
 
                         <div class="col-md-4">
                           <div class="form-group">
-                              <input type="submit" @click="updateProfile" value="Save Changes" class="btn btn-primary w-100">
+                              <input type="submit" @click="updateProfile" value="Сохранить изменения" class="btn btn-primary w-100">
                           </div>
                         </div>
 
@@ -78,30 +76,30 @@
                       <div class="row">
                         <div class="col-md-">
                             <div class="alert alert-info">
-                              Please use the Reset password email button for reseting the password. The form doens't work currently
+                             Для сброса пароля нажмите кнопку. 
                             </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text"  v-model="account.name" placeholder="User name" class="form-control">
+                            <input type="text"  v-model="account.name" placeholder="Имя" class="form-control">
                           </div>
                         </div>
 
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text"  v-model="account.email" placeholder="Email address" class="form-control">
+                            <input type="text"  v-model="account.email" placeholder="Email" class="form-control">
                           </div>
                         </div>
 
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text"  v-model="account.password" placeholder="New password" class="form-control">
+                            <input type="text"  v-model="account.password" placeholder="Новый пароль" class="form-control">
                           </div>
                         </div>
 
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text" v-model="account.confirmPassword"  placeholder="Confirm password" class="form-control">
+                            <input type="text" v-model="account.confirmPassword"  placeholder="Подтвердить пароль" class="form-control">
                           </div>
                         </div>
 
@@ -113,13 +111,13 @@
 
                         <div class="col-md-4">
                           <div class="form-group">
-                              <input type="submit" value="Save Changes" class="btn btn-primary w-100">
+                              <input type="submit" value="Сохранить изменения" class="btn btn-primary w-100">
                           </div>
                         </div>
 
                         <div class="col-md-4">
                           <div class="form-group">
-                              <input type="button" @click="resetPassword" value="Reset password email" class="btn btn-success w-100">
+                              <input type="button" @click="resetPassword" value="Сброс пароля" class="btn btn-success w-100">
                           </div>
                         </div>
                       </div>

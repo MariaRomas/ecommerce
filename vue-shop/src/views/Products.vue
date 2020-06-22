@@ -5,11 +5,9 @@
         <div class="intro h-100">
             <div class="row h-100 justify-content-center align-items-center">
               <div class="col-md-6">
-                    <h3>Products Page</h3>
+                    <h3>Товары</h3>
                     
-                 <p>
-                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, ducimus.
-                 </p>
+                
               </div>
               <div class="col-md-6">
                   <img src="/img/svg/products.svg" alt="" class="img-fluid">
@@ -22,17 +20,17 @@
           <div class="product-test">
 
 
-            <h3 class="d-inline-block">Products list</h3>
-            <button @click="addNew" class="btn btn-primary float-right">Add Product</button>
+            <h3 class="d-inline-block">Список товаров</h3>
+            <button @click="addNew" class="btn btn-primary float-right">Добавить товар</button>
 
             <div class="table-responsive">
               
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Price</th>
-                      <th>Modify</th>
+                      <th>Название</th>
+                      <th>Цена</th>
+                      <th>Действие</th>
                     </tr>
                   </thead>
 
@@ -48,8 +46,8 @@
 
                         <td>
 
-                          <button class="btn btn-primary" @click="editProduct(product)">Edit</button>
-                          <button class="btn btn-danger" @click="deleteProduct(product)">Delete</button>
+                          <button class="btn btn-primary" @click="editProduct(product)">Редактировать</button>
+                          <button class="btn btn-danger" @click="deleteProduct(product)">Удалить</button>
                         </td>
 
                       </tr>
@@ -67,7 +65,7 @@
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="editLabel">Edit Product</h5>
+              <h5 class="modal-title" id="editLabel">Редактирование товара</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -78,7 +76,7 @@
                   <!-- main product -->
                   <div class="col-md-8">
                     <div class="form-group">
-                      <input type="text" placeholder="Product Name" v-model="product.name" class="form-control">
+                      <input type="text" placeholder="Название" v-model="product.name" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -87,15 +85,15 @@
                   </div>
                   <!-- product sidebar -->
                   <div class="col-md-4">
-                    <h4 class="display-6">Product Details</h4>
+                    <h4 class="display-6">Детали товара</h4>
                     <hr>
 
                     <div class="form-group">
-                      <input type="text" placeholder="Product price" v-model="product.price" class="form-control">
+                      <input type="text" placeholder="Цена" v-model="product.price" class="form-control">
                     </div>
 
                     <div class="form-group">
-                      <input type="text" @keyup.32="addTag" placeholder="Product tags" v-model="tag" class="form-control">
+                      <input type="text" @keyup.32="addTag" placeholder="Тэги" v-model="tag" class="form-control">
                       
                       <div  class="d-flex">
                         <p v-for="tag in product.tags">
@@ -107,7 +105,7 @@
 
 
                     <div class="form-group">
-                      <label for="product_image">Product Images</label>
+                      <label for="product_image">Изображения</label>
                       <input type="file" @change="uploadImage" class="form-control">
                     </div>
 
@@ -128,9 +126,9 @@
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button @click="addProduct()" type="button" class="btn btn-primary" v-if="modal == 'new'">Save changes</button>
-              <button @click="updateProduct()" type="button" class="btn btn-primary" v-if="modal == 'edit'">Apply changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+              <button @click="addProduct()" type="button" class="btn btn-primary" v-if="modal == 'new'">Сохранить изменения</button>
+              <button @click="updateProduct()" type="button" class="btn btn-primary" v-if="modal == 'edit'">Внести изменения</button>
             </div>
           </div>
         </div>
@@ -228,7 +226,7 @@ export default {
         this.$firestore.products.doc(this.product.id).update(this.product);
           Toast.fire({
             type: 'success',
-            title: 'Updated  successfully'
+            title: 'Успешно обновлен'
           })
            $('#product').modal('hide');
     },
@@ -239,19 +237,19 @@ export default {
     },
     deleteProduct(doc){
       Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Вы уверены?',
+        text: "Вы не сможете вернуть данные",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Да, удалить!'
       }).then((result) => {
         if (result.value) {
           this.$firestore.products.doc(doc.id).delete()
           Toast.fire({
             type: 'success',
-            title: 'Deleted  successfully'
+            title: 'Успешно удален'
           })
         
         }
@@ -268,7 +266,7 @@ export default {
       
           Toast.fire({
             type: 'success',
-            title: 'Product created successfully'
+            title: 'Товар успешно создан'
           })
       $('#product').modal('hide');
     }

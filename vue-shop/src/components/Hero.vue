@@ -8,11 +8,11 @@
                   Интернет-магазин хвойных растений
                 </h1>
                 <p>
-           Хвойные растения занимают важное место в озеленении и благоустройстве городских и частных территорий. Они придают участку оригинальность и привлекательность, являются прекрасным фоном для любых композиций и всех построек. Вы можете недорого купить саженцы хвойных растений на любой вкус.
-                </p>
+         100% приживаемость на вашем участке       </p>
                 <div class="hero-btn mt-5">
-                    <button class="btn custom-btn btn-outline-secondary mr-4">Explore</button>
-                    <button class="btn custom-btn btn-success ">Ассортимент</button>
+                  
+                  <router-link to='/products' class="btn custom-btn btn-success mr-4">К покупкам</router-link>
+       
                 </div>
               </div>
             </div>
@@ -46,5 +46,5 @@ export default {
   img{
     text-align:center;
     max-width:763px;
-  margin-top:-10%}
+  margin-top:-25%}
 </style>

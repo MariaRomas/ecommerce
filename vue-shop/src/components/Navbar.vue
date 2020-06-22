@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Хвойник</a>
+  <a class="navbar-brand" href="/">Хвойник</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,7 +18,7 @@
         <router-link to="/products" class="nav-link">Ассортимент</router-link>
       </li>
        <li class="nav-item">
-        <router-link to="/delivery" class="nav-link">Оплата и доставка</router-link>
+        <router-link to="/delivery" class="nav-link">Доставка и оплата</router-link>
       </li>
       <li class="nav-item">
         <router-link to="/contacts" class="nav-link">Контакты</router-link>
@@ -26,8 +26,11 @@
      
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+     <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
       <a class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#login" type="submit">Войти</a>
+     <a class="btn btn-outline-success border-0 mx-2 my-2 my-sm-0" data-toggle="modal" data-target="#miniCart">
+              <i class="fas fa-cart-plus"></i>
+            </a>
     </form>
   </div>
 
@@ -47,5 +50,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+li:hover{
+  text-decoration: underline green;
+}
 </style>

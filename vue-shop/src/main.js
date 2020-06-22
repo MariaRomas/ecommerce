@@ -37,6 +37,8 @@ Vue.component('Navbar', require('./components/Navbar.vue').default);
 Vue.component('add-to-cart', require('./components/AddToCart.vue').default);
 Vue.component('mini-cart', require('./components/MiniCart.vue').default);
 Vue.component('products-list', require('./sections/ProductList.vue').default);
+Vue.component('footer-el', require('./components/Footer.vue').default);
+Vue.component('products-catalog', require('./sections/ProductsCatalog.vue').default);
 Vue.config.productionTip = false;
 Vue.use(VueFirestore);
 import Vue2Filters from 'vue2-filters'

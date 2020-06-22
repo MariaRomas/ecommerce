@@ -24,59 +24,50 @@
                         <span class="user-role"> {{email}} </span>
                         <span class="user-status">
                             <i class="fa fa-circle"></i>
-                            <span>Online</span>
+                            <span>Онлайн</span>
                         </span>
                     </div>
                 </div>
                 <!-- sidebar-search  -->
                 <div class="sidebar-item sidebar-search">
-                    <div>
-                        <div class="input-group">
-                            <input type="text" class="form-control search-menu" placeholder="Search...">
-                            <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
                 <!-- sidebar-menu  -->
                 <div class=" sidebar-item sidebar-menu">
                     <ul>
                         <li class="header-menu">
-                            <span>Menu</span>
+                            <span>Меню</span>
                         </li>
 
                         <li>
                             <router-link to="/admin/overview">
                                 <i class="fa fa-chart-line"></i>
-                                <span>Overview</span>
+                                <span>Обзор</span>
                             </router-link>
                         </li>
                         <li>
                             <router-link to="/admin/products">
                                 <i class="fab fa-amazon"></i>
-                                <span>Products</span>
+                                <span>Товары</span>
                             </router-link>
                         </li>
                         <li>
                             <router-link to="/admin/orders">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span>Orders</span>
+                                <span>Заказы</span>
                             </router-link>
                         </li>
 
                         <li>
                             <router-link to="/admin/profile">
                                 <i class="fa fa-user"></i>
-                                <span>Profile</span>
+                                <span>Профиль</span>
                             </router-link>
                         </li>
                         <li>
                             <a href="#" @click="logout()">
                                 <i class="fa fa-power-off"></i>
-                                <span>Logout</span>
+                                <span>Выход</span>
                             </a>
                         </li>
                     </ul>
@@ -88,6 +79,7 @@
         <!-- sidebar-content  -->
         <main class="page-content">
             <router-view/>
+            
         </main>
         <!-- page-content" -->
      

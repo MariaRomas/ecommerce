@@ -1,6 +1,8 @@
 <template>
   <div class="add-to-cart">
-   <button class="btn btn-success" @click="addToCart()">Добавить в корзину</button> 
+   
+        <button class="btn btn-success" @click="addToCart"> Добавить в корзину </button>
+    
   </div>
 </template>
 
@@ -10,31 +12,31 @@ export default {
   props: {
     name: String,
     price: String,
-      image: String,
-    pId: String,
+    image: String,
+    pId: String
   },
   data(){
-return{
-    item :{
-    productName: this.name,
-    productImage: this.image,
-    productPrice: this.price,
-    product_id: this.pId,
-    productQuantity: 1
-    } 
-}
+      return {
+          item :{
+            productName: this.name,
+            productImage: this.image,
+            productPrice: this.price,
+            productId: this.pId,
+            productQuantity: 1,
+          }
+      }
   },
   methods:{
- addToCart(){
-     $('#miniCart').modal('show')
-   this.$store.commit('addToCart', this.item)   
+    addToCart(){
+      $('#miniCart').modal('show');
+      this.$store.commit('addToCart', this.item)
+    }
   }
-  }
- 
 };
 </script>
 
+
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 </style>

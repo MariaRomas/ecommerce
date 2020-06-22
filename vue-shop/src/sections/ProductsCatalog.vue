@@ -1,10 +1,21 @@
 <template>
   <div class="products" id="products">
+
+
+
+
+
       <div class="container">
-          <h1 class="text-center p-5">Новинки</h1>
+
+
+
+
+
+
+          <h1 class="text-center p-5">Хвойные растения</h1>
           <div class="row">
               
-              <div class="col-md-4" v-for="product in products.slice(0, 3)">
+              <div class="col-md-4" v-for="product in products">
                   <div class="card product-item">
 
                         <carousel :perPage="1">
@@ -31,16 +42,19 @@
               </div>
 
           </div>
-           
       </div>
     
+
+
+
   </div>
 </template>
 
 <script>
+
 import {db} from '../firebase';
 export default {
-  name: "Products-list",
+  name: "Products-catalog",
   props: {
     msg: String
   },
@@ -66,13 +80,22 @@ data(){
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
     .products{
-        margin-top: 1rem;
-     
+    
         padding-bottom: 3rem;
     }
         img{
         height:230px
     }
     .card-text{height:10%}
-  
+    
+
+    .glyphicon { margin-right:5px; }
+.thumbnail {
+ margin-bottom: 20px;
+ padding: 0px;
+ -webkit-border-radius: 0px;
+ -moz-border-radius: 0px;
+ border-radius: 0px
+}
+
 </style>

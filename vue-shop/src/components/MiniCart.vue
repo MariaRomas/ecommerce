@@ -6,7 +6,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">My Bag</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Корзина</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -20,16 +20,16 @@
 
                           <span class='float-right' @click="$store.commit('removeFromCart',item)">X</span>
                         </h5>
-                        <p class="mt-0">{{item.productPrice | currency}}</p>
-                        <p class="mt-0">Quantity : {{item.productQuantity }}</p>
+                        <p class="mt-0">{{item.productPrice}}  ₽</p>
+                        <p class="mt-0">Кол-во: {{item.productQuantity }}</p>
                       </div>
                     </li>
 
                   </ul>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
-                <button type="button" class="btn btn-primary" @click="checkout">Checkout</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Продолжить покупки</button>
+                <button type="button" class="btn btn-primary" @click="checkout">Оформить заказ</button>
               </div>
             </div>
           </div>
