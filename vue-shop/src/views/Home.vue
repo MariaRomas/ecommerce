@@ -6,7 +6,7 @@
     <div class="container h-100 ">
         <div class="row p-5 h-100 justify-content-center align-items-center">
           <div class="col-md-6">
-            <img src="/img/about.jpg" alt="" width="500">
+            <img src="/img/about.jpg" alt=""  class="img-fluid" width="500">
           </div>
           <div class="col-md-6">
             <h3>О нас</h3>
@@ -28,7 +28,7 @@
   
           </div>
           <div class="col-md-6">
-             <img src="/img/delivery.jpg" alt="" width="500">  </div>
+             <img src="/img/delivery.jpg"  class="img-fluid" alt="" width="500">  </div>
         </div>
     
 
@@ -52,3 +52,9 @@ export default {
   }
 };
 </script>
+<style scoped lang="scss">
+ @media screen and (max-width:705px) {
+   .image{display:none}
+}
+
+</style>

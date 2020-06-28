@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-7">
                 <div class="graphic">
-                    <img src="/img/home2.png"  alt="">
+                    <img  class="img-fluid image" src="/img/home2.png"  alt="">
                 </div>
             </div>
           </div>
@@ -46,5 +46,10 @@ export default {
   img{
     text-align:center;
     max-width:763px;
+    width:100%;
   margin-top:-25%}
+   @media screen and (min-width:0px) and (max-width:715px) {
+   .image{display:none}
+}
+
 </style>

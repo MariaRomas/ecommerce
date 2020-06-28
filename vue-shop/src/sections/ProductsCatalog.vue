@@ -87,7 +87,7 @@ data(){
         height:230px
     }
     .card-text{height:10%}
-    
+     
 
     .glyphicon { margin-right:5px; }
 .thumbnail {

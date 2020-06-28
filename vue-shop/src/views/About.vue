@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-7">
                 <div class="graphic">
-                    <img src="/img/abouts.jpg"  width="500px" alt="">
+                    <img src="/img/abouts.jpg"  class="img-fluid" width="500px" alt="">
                 </div>
             </div>
           </div>

@@ -70,6 +70,7 @@ data(){
      
         padding-bottom: 3rem;
     }
+   
         img{
         height:230px
     }
