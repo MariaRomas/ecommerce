@@ -28,15 +28,22 @@
                           <div class="d-flex justify-content-between">
                             <h5 class="card-title">{{ product.name }}</h5>
                             <h5 class="card-priceS">{{ product.price }} ₽</h5>
-
-                          </div>
                            
+                          </div>
+                            <span class="card-priceS">{{ product.tags[0] }}</span>
+                              <span class="card-priceS">{{ product.tags[1] }}</span>
+                                <span class="card-priceS">{{ product.tags[2] }}</span>
                             <add-to-cart 
                                 :image="getImage(product.images)"
                                 :p-id="product.id"
                                 :price="product.price"
                                 :name="product.name">
                             </add-to-cart>
+                        </div>
+                       
+                      
+                        <div class="card-text">
+ <p v-html="product.description"></p>
                         </div>
                     </div>
               </div>
@@ -86,9 +93,26 @@ data(){
         img{
         height:230px
     }
-    .card-text{height:10%}
+    .product-item:hover .card-text{
+      display:block;
+      position:absolute;
+    top:120px;
+    z-index:9999;
+    width:400px;
+    }
+    .card-text{display: none;
+    margin-left:-50px;
+    padding:10px;
+    margin-top:17px;
+    background:#f3f3f3;
+    height:200px;
+    -moz-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    box-shadow:0 5px 5px rgba(0,0,0,0.3);}
      
-
+  span.card-priceS{text-decoration: underline;
+ 
+  }
     .glyphicon { margin-right:5px; }
 .thumbnail {
  margin-bottom: 20px;
